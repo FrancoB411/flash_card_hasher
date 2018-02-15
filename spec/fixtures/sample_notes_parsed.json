@@ -1,0 +1,230 @@
+{
+"heading": null,
+"cards":[
+],
+"contexts":[
+  {
+    "heading":"Chapter 1. General Unix and Advanced C",
+    "cards":[
+    ],
+    "contexts":[
+      {
+        "heading":"Everything is a file!",
+        "cards":[
+          {
+            "front":"everything is a file",
+            "back":"  ~ An often-quoted tenet of UNIX-like systems such as Linux or BSD\n"
+          },
+          {
+            "front":"  ~ 1. Read it (existing saved data from the word processor).",
+            "back":"  ~ 1. Read it (existing saved data from the word processor).\n  2. Write to it (new data from the user).\n"
+          },
+          {
+            "front":"Using the file metaphor, what would be the operations for a screen or printer?",
+            "back":"  ~ Write only file\n"
+          },
+          {
+            "front":"Using the file metaphor, what would be the operations for a mouse or keyboard or CD ROM?",
+            "back":"  ~ Read only file\n"
+          },
+          {
+            "front":"File",
+            "back":"  ~ A conceptual abstraction for a sink or source of data, for all devices one might attach to a computer\n"
+          },
+          {
+            "front":"The primary concept that underpins all modern computing",
+            "back":"  ~ abstraction\n"
+          }
+        ],
+        "contexts":[
+        ]
+      },
+      {
+        "heading":"Implementing abstraction",
+        "cards":[
+          {
+            "front":"What implements abstraction?",
+            "back":"  ~ the application programming interface\n"
+          },
+          {
+            "front":"API",
+            "back":"  ~ a somewhat nebulous term that means different things in the context of various programming endeavours. Fundamentally, a programmer designs a set of functions and documents their interface and functionality with the principle that the actual implementation providing the API is opaque.\n"
+          },
+          {
+            "front":"How do classes exemplify abstraction?",
+            "back":"  ~ Methods provide the interface to the class, but abstract the implementation.\n"
+          }
+        ],
+        "contexts":[
+          {
+            "heading":"Implementing abstraction with C",
+            "cards":[
+              {
+                "front":"function pointers",
+                "back":"  ~ A common method used in the Linux kernel and other large C code bases, which lack a built-in concept of object-orientation\n"
+              },
+              {
+                "front":"    int (*say_goodbye)(void); ",
+                "back":"  ~ ``\n  /* The API to implement */\n  struct greet_api {\n    int (*say_hello)(char *name); /* \u003c--function pointer */\n    int (*say_goodbye)(void); \n  };\n"
+              },
+              {
+                "front":"function pointer",
+                "back":"  ~ describes the prototype of the function it must point to; pointing it at a function without the correct return type or parameters will generate a compiler warning at least; if left in code will likely lead to incorrect operation or crash\n"
+              },
+              {
+                "front":"Dunder [function name]",
+                  "back":"  ~ double-underscore function \\_\\_foo may conversationally be referred to as \"dunder foo\" (dun for double underscore)\n"
+              },
+              {
+                "front":"Api idiom for more complex functionality",
+                "back":"  ~ API implementation functions will only be a wrapper around other functions that are conventionally prepended with one or or two underscores\n"
+              },
+              {
+                "front":"What do underscores in front of functions signal?",
+                "back":"  ~ a visual warning that the function is not supposed to be called directly from \"beyond\" the API\n"
+              },
+              {
+                "front":"in `\u0026say_hello_fn` what does the `\u0026` do?",
+                "back":"  ~ takes the address of the function\n"
+              }
+            ],
+            "contexts":[
+            ]
+          }
+        ]
+      },
+      {
+        "heading":"Libraries",
+        "cards":[
+          {
+            "front":"  ~ Allow programmers to reuse commonly accessed code.",
+            "back":"  ~ Allow programmers to reuse commonly accessed code.\n  Act as a black box implementing functionality for the programmer.\n"
+          },
+          {
+            "front":"libc",
+            "back":"  ~ The standard library of a UNIX platform which provided the basic interface to the system\n"
+          },
+          {
+            "front":"POSIX",
+            "back":"  ~ the specification that enitrely describes the many calls that make up the standard UNIX API\n"
+          }
+        ],
+        "contexts":[
+        ]
+      },
+      {
+        "heading":"File Descriptors",
+        "cards":[
+          {
+            "front":"Standard Files Provided by Unix",
+            "back":"  ~ stdin, stdout, stderr\n"
+          },
+          {
+            "front":"File numbers for stdin, stdout, stderr",
+            "back":"  ~ 0, 1, 2 respectively\n"
+          },
+          {
+            "front":"stdin",
+            "back":"  ~ input from the keyboard\n"
+          },
+          {
+            "front":"stdout",
+            "back":"  ~ Output to the console\n"
+          },
+          {
+            "front":"stderr",
+            "back":"  ~ Error output to the console\n"
+          },
+          {
+            "front":"File descriptor",
+            "back":"  ~ The value returned by an open call. An index into an array (descriptor table) of open files kept by the kernel. The gateway into the kernel's abstractions of underlying hardware\n"
+          },
+          {
+            "front":"How does the Kernel respond to an `open` call?",
+            "back":"  ~ The Kernel creates a file descriptor and associates the file descriptor with some abstraction of an underlying file-like object, be that an actual hardware device, or a file system or something else entirely. Consequently a process's read or write calls that reference that file descriptor are routed to the correct place by the kernel to ultimately do something useful.\n"
+          },
+          {
+            "front":"`/dev`",
+            "back":"  ~  Special file system on the host that represent Physical devices on the host \n"
+          },
+          {
+            "front":"What happens when a file is opened?",
+            "back":"  ~ when a file is opened the kernel is using the path information to map the file descriptor with something that provides an appropriate read and write, etc., API.\n"
+          },
+          {
+            "front":"What do the major and minor number of the opened device node provide?",
+            "back":"  ~ The information the kernel needs to find the correct device driver and complete the mapping. The kernel will then know how to route further calls such as read to the underlying functions provided by the device driver.\n"
+          },
+          {
+            "front":"mount point",
+            "back":"  ~ Abstraction which sets a mapping so the file system knows the underlying device that provides the storage and the kernel knows that files opened under that mount-point should be directed to the file system driver.\n"
+          },
+          {
+            "front":"What API are file systems written to?",
+            "back":"  ~ file systems are written to a particular generic file system API provided by the kernel.\n"
+          }
+        ],
+        "contexts":[
+        ]
+      },
+      {
+        "heading":"The Shell",
+        "cards":[
+          {
+            "front":"The Shell",
+            "back":"  ~ The gateway to interacting with the operating system. \n"
+          },
+          {
+            "front":"Fundamentally the major task of as shell",
+            "back":"  ~ To allow you to execute programs \n"
+          }
+        ],
+        "contexts":[
+        ]
+      },
+      {
+        "heading":"Redirection",
+        "cards":[
+          {
+            "front":"redirect to a file",
+            "back":"  ~ `\u003e filename`  Take all output from standard out and place it into filename. Note using \u003e\u003e will append to the file, rather than overwrite it.\n"
+          },
+          {
+            "front":"read from a file",
+            "back":"  ~ `\u003c filename`  Copy all data from the file to the standard input of the program\n"
+          },
+          {
+            "front":"Pipe to a file",
+            "back":"  ~ `program1 | program2`   Take everything from standard out of program1 and pass it to standard input of program2\n"
+          },
+          {
+            "front":"Pipe",
+            "back":"  ~ The pipe is an in-memory buffer that connects two processes together. This is one of the fundamental forms of inter-process communication or IPC in UNIX-like operating systems\n"
+          }
+        ],
+        "contexts":[
+          {
+            "heading":"Implementing pipe",
+            "cards":[
+              {
+                "front":"Where is a pipe's buffer stored?",
+                "back":"  ~  pipe buffers are estored by the kernel until a corresponding read from the other side drains the buffer\n"
+              },
+              {
+                "front":"How is pipe implemented?",
+                "back":"  ~ Instead of associating the file descriptor for the standard-output with some sort of underlying device, the descriptor is pointed to an in-memory buffer provided by the kernel commonly termed a pipe. Another process can associate its standard input with the other side of this same buffer and effectively consume the output of the other process.\n"
+              },
+              {
+                "front":"How can pipes work as a signalling channel?",
+                "back":"  ~ If a process reads an empty pipe, it will by default block or be put into hibernation until there is data available Thus two processes may use a pipe to communicate just by writing a byte of data; Say for example one process requests that another print a file The two processes may set up a pipe between themselves where the requesting process does a read on the empty pipe; being empty, that call blocks and the process does not continue. Once the print is done, the other process can write a message into the pipe, which effectively wakes up the requesting process and signals the work is done.\n"
+              }
+            ],
+            "contexts":[
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+}
