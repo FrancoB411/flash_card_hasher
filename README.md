@@ -41,7 +41,8 @@ Say you have a markdown file with a bunch of headings and definitions, like [thi
 Run this:
 
 ```ruby
-flashcard_hash = FlashcardHasher.parse('path/to/your/markdown/file.md')
+md = File.read('path/to/your/markdown/file.md')
+flashcard_hash = FlashcardHasher.parse(md)
 ```
 
 Then this: 
