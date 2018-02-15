@@ -9,11 +9,15 @@ So long as your markdown file contains
 
 Flashcard Hasher can turn it into a nice nested hash ready for serialization.
 
-## Why would anyone do this?
+## Heads Up: WIP
+
+The output format is still very much in flux here people. It's a 0.1.0. So if you depend on this, you're pretty adventurous.
+
+## Why build this?
 
 Well, if you could take all those notes you've accumulated over the years and turn them into flashcards...
 
-And you could import those flashcards into a sick flash card app you're working on that would remind you to study only what you're about to forget..
+And you could import those flashcards into a sick flashcard app you're working on that would remind you to study only what you're about to forget..
 
 That would be cool. 
 
@@ -36,7 +40,7 @@ Or install it yourself as:
 
 ## Usage
 
-Say you have a markdown file with a bunch of headings and definitions, like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_input.md).
+Say you have a markdown file with a bunch of headings, terms and definitions, like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_input.md).
 
 Run this:
 
@@ -61,7 +65,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/json_from_notes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to be nice.  
+Bug reports and pull requests are welcome on GitHub at https://github.com/francob411/flashcard_hasher.
+
+This project is intended to be a safe, welcoming space for collaboration so, you know, be nice.
 
 ## License
 
