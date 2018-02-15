@@ -1,4 +1,3 @@
-
 RSpec.describe CardContext, type: :model do
   its(:heading) { is_expected.to eq(nil) }
   its(:cards) { is_expected.to eq([]) }
