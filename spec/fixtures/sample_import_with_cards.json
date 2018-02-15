@@ -9,7 +9,7 @@
       "cards":[
         {
           "front":"front1",
-          "back":"  ~ back1\n"
+          "back":"~ back1\n"
         }
       ],
       "contexts":[
@@ -18,7 +18,7 @@
           "cards":[
             {
               "front":"front2",
-              "back":"  ~ back2\n"
+              "back":"~ back2\n"
             }
           ],
           "contexts":[
@@ -30,7 +30,7 @@
           "cards":[
             {
               "front":"front3",
-              "back":"  ~ back3\n"
+              "back":"~ back3\n"
             }
           ],
           "contexts":[
@@ -39,7 +39,7 @@
               "cards":[
                 {
                   "front":"front4",
-                  "back":"  ~ back4\n"
+                  "back":"~ back4\n"
                 }
               ],
               "contexts":[
@@ -53,7 +53,7 @@
           "cards":[
             {
               "front":"front5",
-              "back":"  ~ back5 \n"
+              "back":"~ back5\n"
             }
           ],
           "contexts":[
@@ -67,7 +67,7 @@
       "cards":[
         {
           "front":"front1B",
-          "back":"  ~ back1B\n"
+          "back":"~ back1B\n"
         }
       ],
       "contexts":[

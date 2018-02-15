@@ -2,7 +2,7 @@ class Token
   attr_accessor :string, :previous, :next
 
   def initialize(string)
-    @string = string
+    @string = string.strip
     @previous = NullToken.new
     @next = NullToken.new
   end
@@ -37,7 +37,7 @@ class Token
   end
 
   def starts_with_squiggle?
-    !!string.match(/\s{2}[~]/)
+    !!string.match(/\s*[~]/)
   end
 
   def blank?
