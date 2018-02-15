@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/FrancoB411/flashcard_hasher.svg?branch=master)](https://travis-ci.org/FrancoB411/flashcard_hasher)
 # Flashcard Hasher 
 
 Flashcard Hasher transforms specially formatted Markdown files into a hash of flash cards nested by heading.
