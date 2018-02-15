@@ -13,7 +13,7 @@ Flashcard Hasher can turn it into a nice nested hash ready for serialization.
 
 Well, if you could take all those notes you've accumulated over the years and turn them into flashcards...
 
-Ans you could import those flashcards into a sick flash card app you're working on that would remind you to study only what you're about to forget..
+And you could import those flashcards into a sick flash card app you're working on that would remind you to study only what you're about to forget..
 
 That would be cool. 
 
@@ -36,7 +36,7 @@ Or install it yourself as:
 
 ## Usage
 
-Say you have a markdown file with a bunch of headings and definitions, like the [sample_import.md](#).
+Say you have a markdown file with a bunch of headings and definitions, like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_import.md).
 
 Run this:
 
@@ -50,7 +50,7 @@ Then this:
 flashcard_hash.to_json
 ```
 
-And you should get a nice JSON like [sample_import.json](#).
+And you should get a nice JSON like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_import_with_cards.json).
 
 ## Development
 
@@ -64,5 +64,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The little gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
