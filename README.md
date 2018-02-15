@@ -36,7 +36,7 @@ Or install it yourself as:
 
 ## Usage
 
-Say you have a markdown file with a bunch of headings and definitions, like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_import.md).
+Say you have a markdown file with a bunch of headings and definitions, like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_input.md).
 
 Run this:
 
@@ -50,7 +50,7 @@ Then this:
 flashcard_hash.to_json
 ```
 
-And you should get a nice JSON like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_import_with_cards.json).
+And you should get a nice JSON like [this](https://github.com/FrancoB411/flashcard_hasher/blob/master/spec/fixtures/sample_output.json).
 
 ## Development
 

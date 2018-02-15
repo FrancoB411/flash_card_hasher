@@ -67,7 +67,7 @@ RSpec.describe Token, type: :model do
   end
 
   describe "#is_term?" do
-    file = File.read('spec/fixtures/sample_import.md')
+    file = File.read('spec/fixtures/sample_input.md')
     tokens = file.split("\n").map{|line| Token.new(line) }
 
     it "returns true when is a term" do

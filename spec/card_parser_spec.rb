@@ -1,14 +1,13 @@
 RSpec.describe CardParser, type: :model do
-  let(:md) { File.read('spec/fixtures/sample_import.md') }
-  let(:parsed) { JSON.parse(File.read('spec/fixtures/sample_import_with_cards.json')) }
+  let(:md) { File.read('spec/fixtures/sample_input.md') }
+  let(:parsed) { JSON.parse(File.read('spec/fixtures/sample_output.json')) }
 
   subject { CardParser.new(md) }
 
   its(:file_string) { is_expected.to eq(md) }
-
   its(:parse) { is_expected.to eq(parsed) }
 
-  # TODO Clean this up
+  # TODO break up some #parse logic into #update_current_context method
   describe "#update_current_context" do
     context "when child heading" do
       it "adds a subcontext" do
